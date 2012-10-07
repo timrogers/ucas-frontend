@@ -22,7 +22,7 @@ module UCAS
       keys.each do |key|
         results[key] = self.get(key)
       end
-      returns results
+      results
     end
   end
 end
