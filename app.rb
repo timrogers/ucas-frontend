@@ -3,6 +3,8 @@ require 'sinatra'
 # Require in all the files from lib/
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each {|file| require file }
 
+set :port, 8227 # 8227 spells "UCAS" ;)
+
 get '/' do
   @results = UCAS::Datastore.all()
   
