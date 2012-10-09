@@ -41,9 +41,9 @@
     
     <div class="container" style="margin-top: 85px;">
       <p class="lead">
-        This is the latest news on my UCAS application to start university in Summer 2013. It was
-        last updated <%= Time.now.sec %> seconds ago and it will be updated in
-        approximately <%= (60-Time.now.sec)%> seconds time. <em>
+        This is the latest news on my UCAS application to start university in Summer 2013. The
+        data behind this page will update itself every 2 minutes, so it is essentially real-time.
+        The backend code is available on my <a href="https://github.com/timrogers/ucas">GitHub</a>.
       </p>
       <table class="table table-striped">
         <thead>
@@ -55,11 +55,11 @@
           </tr>
         </thead>
         <tbody>
-          <% @results.each do |key, value| %>
+          <% @results.each do |result| %>
             <tr>
-              <td><%= key %></td>
-              <td><%= @course_codes[key]["course"] %>
-                <td><%= @course_codes[key]["university"] %></td>
+              <td><%= result[:code] %></td>
+              <td><%= result[:course] %>
+                <td><%= result[:university] %></td>
               <td><%= value != "" ? value : "No response" %></td>
             </tr>
             <% end %>
