@@ -21,9 +21,9 @@ module UCAS
     
     def self.all
       keys = @@adapter.keys("*")
-      results = {}
+      results = []
       keys.each do |key|
-        results[key] = self.get(key)
+        results << self.get(key)
       end
       results
     end

@@ -56,11 +56,12 @@
         </thead>
         <tbody>
           <% @results.each do |result| %>
+          <% puts result.inspect %>
             <tr>
               <td><%= result[:code] %></td>
               <td><%= result[:course] %>
                 <td><%= result[:university] %></td>
-              <td><%= value != "" ? value : "No response" %></td>
+              <td><%= result[:decision] != "" ? result[:decision] : "No response" %></td>
             </tr>
             <% end %>
         </tbody>
